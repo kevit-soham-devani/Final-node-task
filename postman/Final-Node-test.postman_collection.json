@@ -1,0 +1,924 @@
+{
+	"info": {
+		"_postman_id": "217c353e-4bc7-4d14-ae72-63a061d832d9",
+		"name": "Final-Node-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38038513"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\":\"admin\",\r\n    \"name\":\"vishv\",\r\n    \"email\":\"vishv@email.com\",\r\n    \"PhoneNumber\":884579632,\r\n    \"password\":\"vishv741\",\r\n    \"semester\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"PhoneNumber\":884579632,\r\n    \"password\":\"vishv741\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"PhoneNumber\":987132365,\r\n  \"name\": \"dhruv\",\r\n  \"department\": \"ME\",\r\n  \"semester\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/987132365",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"987132365"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":\"66d30a9ef1c864f9c171628b\",\r\n  \"name\": \"nirav\",\r\n  \"email\": \"nirav@email.com\",\r\n  \"PhoneNumber\": 987132365,\r\n  \"password\": \"$2b$10$fTy/INkqFmjkrbNmBOXqHufxOZgAH8W1jUOxEw87V3Mwn94bNhahK\",\r\n  \"department\": \"ME\",\r\n  \"role\": \"staff\",\r\n  \"semester\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/987132365",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"987132365"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"name\": \"vishv\",\r\n        \"email\": \"vishv@email.com\",\r\n        \"PhoneNumber\": 884579632,\r\n        \"password\": \"$2b$10$FZDPPN.pEJPA6Ar/3G5Obeevd/ZeKqWu.VEoM.WqIEScmz9NSrpga\",\r\n        \"role\": \"admin\",\r\n        \"semester\": 1,\r\n        \"_id\": \"66d354bb2823bdec7155698d\",\r\n        \"tokens\": [\r\n            {\r\n                \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzNTRiYjI4MjNiZGVjNzE1NTY5OGQiLCJpYXQiOjE3MjUxMjU4MTl9.qbNJWnG_I3lY7jNMUVfDIILyJfhiCSmmxqPAELzxxLs\",\r\n                \"_id\": \"66d354bb2823bdec7155698f\"\r\n            }\r\n        ],\r\n        \"createdAt\": \"2024-08-31T17:36:59.768Z\",\r\n        \"updatedAt\": \"2024-08-31T17:36:59.838Z\",\r\n        \"__v\": 1\r\n    },\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzNTRiYjI4MjNiZGVjNzE1NTY5OGQiLCJpYXQiOjE3MjUxMjU4MTl9.qbNJWnG_I3lY7jNMUVfDIILyJfhiCSmmxqPAELzxxLs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "create student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sid\",\r\n    \"rollNumber\":\"20ec03\",\r\n    \"mobileNumber\":987654326,\r\n    \"department\":\"CE\",\r\n    \"batch\":2019,\r\n    \"semester\":1,\r\n    \"role\":\"student\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/student",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/student",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/student/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"student",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get student analytics",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/analytics/students",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"analytics",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"semester\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/student/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"student",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "batches",
+			"item": [
+				{
+					"name": "create batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"year\":2021,\r\n    \"branches\":[{\r\n        \"name\":\"CE\",\r\n        \"totalStudentsIntake\":500,\r\n        \"currentSeatCount\":500\r\n    },{\r\n        \"name\":\"ME\",\r\n        \"totalStudentsIntake\":500,\r\n        \"currentSeatCount\":400\r\n    },{\r\n        \"name\":\"EC\",\r\n        \"totalStudentsIntake\":500,\r\n        \"currentSeatCount\":500\r\n    }],\r\n    \"totalEnrolledStudent\":1400\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/batch",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/batch",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"year\":2021,\r\n    \"branches\":[{\r\n        \"name\":\"CE\",\r\n        \"totalStudentsIntake\":500,\r\n        \"currentSeatCount\":500\r\n    },{\r\n        \"name\":\"ME\",\r\n        \"totalStudentsIntake\":500,\r\n        \"currentSeatCount\":400\r\n    },{\r\n        \"name\":\"EC\",\r\n        \"totalStudentsIntake\":500,\r\n        \"currentSeatCount\":500\r\n    },\r\n    {\r\n        \"name\":\"IT\",\r\n        \"totalStudentsIntake\":500,\r\n        \"currentSeatCount\":200\r\n    }],\r\n    \"totalEnrolledStudent\":1600\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/batch/branch",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"batch",
+								"branch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/batch/2021",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"batch",
+								"2021"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update batch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branchName\":\"EC\",\r\n    \"totalStudentsIntake\":120\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/batch?year=2020",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"batch"
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2020"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "batch analysis",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/batch/analytics/?year=2019",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"batch",
+								"analytics",
+								""
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2019"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3004/batch/analytics/?year=2019",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"batch",
+										"analytics",
+										""
+									],
+									"query": [
+										{
+											"key": "year",
+											"value": "2019"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "320"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"140-asoU21uFKMqCOzXOe+beeL9igQI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Sep 2024 08:14:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"batch\": 2019,\n        \"totalStudents\": 1100,\n        \"totalStudentsIntake\": 1500,\n        \"availableIntake\": 400,\n        \"branch\": {\n            \"CE\": {\n                \"totalStudents\": 300,\n                \"totalStudentsIntake\": 500,\n                \"availableIntake\": 200\n            },\n            \"ME\": {\n                \"totalStudents\": 300,\n                \"totalStudentsIntake\": 500,\n                \"availableIntake\": 200\n            },\n            \"EC\": {\n                \"totalStudents\": 500,\n                \"totalStudentsIntake\": 500,\n                \"availableIntake\": 0\n            }\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "attendance",
+			"item": [
+				{
+					"name": "create attendance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rollNumber\":\"20ec02\",\r\n    \"isAbsent\":\"absent\",\r\n    \"date\":\"14-08-2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/attendance",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"attendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get absentees",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/absentees?date=02-08-2024",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"absentees"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "02-08-2024"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update attendance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rollNumber\":\"20ec02\",\r\n    \"isAbsent\":\"present\",\r\n    \"date\":\"13-08-2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/attendance/20ec02",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"attendance",
+								"20ec02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attendance analytics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQzMDc0ZWYxYzg2NGY5YzE3MTYyNmYiLCJpYXQiOjE3MjUxMDU5OTh9.yb-DCcxpEzVk-MlZ9I4OGMO7vrKYmYUGxGyhFnbWLB0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/attendance/analytics?startDate=12-08-2024&endDate=14-08-2024",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"attendance",
+								"analytics"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "12-08-2024"
+								},
+								{
+									"key": "endDate",
+									"value": "14-08-2024"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3004/attendance/analytics?startDate=12-08-2024&endDate=14-08-2024",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"attendance",
+										"analytics"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "12-08-2024"
+										},
+										{
+											"key": "endDate",
+											"value": "14-08-2024"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "315"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13b-tDfOkeZhPT7hzK/WqV69HvQ0wWE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 01 Sep 2024 09:00:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"attendancePercentage\": 66.66666666666666,\n            \"studentDetails\": {\n                \"_id\": \"66d42a89ed61811d369dc664\",\n                \"name\": \"mayank\",\n                \"rollNumber\": \"20ec02\",\n                \"mobileNumber\": 987654324,\n                \"department\": \"CE\",\n                \"batch\": 2019,\n                \"semester\": 1,\n                \"role\": \"student\",\n                \"createdAt\": \"2024-09-01T08:49:13.020Z\",\n                \"updatedAt\": \"2024-09-01T08:49:13.020Z\",\n                \"__v\": 0\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:3004",
+			"type": "string"
+		}
+	]
+}

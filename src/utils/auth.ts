@@ -8,6 +8,7 @@ export const generateToken = (userId: string): string => {
 const auth = async (req, res, next) => {
 	try {
 		const { role } = req.body;
+		
 		if (role === User_Role.Admin) {
 			next();
 		} else {

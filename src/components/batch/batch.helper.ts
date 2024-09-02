@@ -75,5 +75,6 @@ export const getVacantSeatsByYear = async (year: number) => {
  * @returns
  */
 export function checkAdmin(role) {
+	
 	return role !== User_Role.Admin;
 }

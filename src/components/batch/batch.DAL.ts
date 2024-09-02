@@ -49,7 +49,7 @@ export async function updateBatch({
 	currentSeatCount,
 }) {
 	try {
-		console.log(year);
+		
 		
 		if (!branchName) {
 			return { mesage: 'BranchName is required' };

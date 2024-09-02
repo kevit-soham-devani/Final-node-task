@@ -1,5 +1,5 @@
 import Attendance from "./attend.model";
-import * as moment from 'moment'
+import moment from 'moment'
 import { ISABSENT } from "./attendence.enum";
 
 /**

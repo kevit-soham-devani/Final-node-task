@@ -5,8 +5,14 @@ import { User, UserInterface } from "../user/user.model";
 import { generateToken } from "../../utils/auth";
 
 class userController {
-  // user
-
+	/**
+	 * Function to create a Staff or admin
+	 * @param {Request} req=>Express Request
+	 * @param {Response} res=> Express Response
+	 * @return {*}
+	 * @memberof UserController
+	 */
+	
   async createUser(req, res) {
     try {
     //   const {phoneNumber} = req.body

@@ -1,7 +1,7 @@
 import Batch from "./batch.model";
 import Student from "../students/student.model";
 import Attendance from "components/attendance/attend.model";
-import { getVacantSeatsByYear, checkAdmin } from "./batch.helper";
+import { checkAdmin, getVacantSeatsByYear} from "./batch.helper";
 import { createNewBatch,
 	deleteBatchByYear,
 	updateBatch,

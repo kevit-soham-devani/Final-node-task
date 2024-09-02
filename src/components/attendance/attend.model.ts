@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import * as moment from 'moment'
+import moment from 'moment'
 import { ISABSENT } from './attendence.enum';
 const { Schema, model} = mongoose;
 

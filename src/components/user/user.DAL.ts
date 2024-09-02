@@ -1,5 +1,3 @@
-import HttpException from "../../utils/error.utils";
-import USER_ERROR_CODES from "./user.error";
 import {User} from "./user.model"
 
 
@@ -12,12 +10,7 @@ export async function createNewUser(userBody = typeof User.schema.obj) {
   try {
     return await User.create(userBody);
   } catch (err) {
-    throw new HttpException(
-      500,
-      USER_ERROR_CODES.CREATE_USER_UNHANDLED_IN_DB,
-      "CREATE_USER_HANDLED_IN_DB",
-      err
-    );
+    return err
   }
 }
 
@@ -46,12 +39,7 @@ export async function deleteUser(userPhoneNumber) {
     const deleteUser = await User.findOneAndDelete(userPhoneNumber)
     return deleteUser
   } catch (err) {
-    throw new HttpException(
-      500,
-      USER_ERROR_CODES.CREATE_USER_UNHANDLED_IN_DB,
-      "CREATE_USER_HANDLED_IN_DB",
-      err
-    );
+    return err
   }
 }
 
@@ -65,12 +53,7 @@ export async function findUserById(id) {
   try{
     return await User.findOne({id})
   } catch (err) {
-    throw new HttpException(
-      500,
-      USER_ERROR_CODES.CREATE_USER_UNHANDLED_IN_DB,
-      "CREATE_USER_HANDLED_IN_DB",
-      err
-    )
+    return err
   }
 }
 
@@ -82,13 +65,7 @@ export async function findUser() {
     try{
       return await User.find().lean();
     } catch (err) {
-      throw new HttpException(
-        500,
-        USER_ERROR_CODES.USER_NOT_FOUND,
-        'USERS_NOT_FOUND',
-        err,
-      );
-
+      return err
     }
 }
 

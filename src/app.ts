@@ -1,5 +1,4 @@
-import * as express from "express";
-import * as http from "http";
+import express, {Application} from "express";
 import * as mongoose from "mongoose";
 import ApplicationConfig from "./app.routes";
 import * as dotenv from "dotenv";
@@ -11,13 +10,14 @@ const PORT = Config.server.port;
 
 class App {
 	app: express.Application;
+	server: any
 	constructor() {
 		this.app = express();
 		this.app.use(express.json());
 		this.initializeRoutes();
 		this.connectToDatabase()
 			.then(() => {
-				this.startServer();
+				// if()
 			})
 			.catch((err) => {
 				console.error('Failed to connect to MongoDB', err);
@@ -36,10 +36,21 @@ class App {
 		}
 	}
 	startServer() {
-		this.app.listen(PORT, () => {
-			console.log(`Listening to Port ${PORT}`);
+		this.server = this.app.listen(PORT, () => {
+		console.log(`Listening to Port ${PORT}`);
 		});
 	}
+	stopServer() {
+		if(this.server) {
+			this.server.close(() => {
+				console.log('server closed');
+			})
+		}
+	}
 }
-new App();
+
+
+const appInstance = new App();
+export const app = appInstance.app;
+export default appInstance
 

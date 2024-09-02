@@ -1,6 +1,6 @@
 /**attendance.Dal.ts */
 import Attendance from './attend.model';
-import * as moment from 'moment'
+import moment from 'moment'
 
 /**
  * Creates attendance in DB
